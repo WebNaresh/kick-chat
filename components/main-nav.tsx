@@ -31,6 +31,11 @@ const MainNav = (props: Props) => {
       label: "My Gears",
       active: pathname === "/mygears",
     },
+    {
+      href: "/login",
+      label: "Login",
+      active: pathname === "/login",
+    },
   ];
   return (
     <div className="flex flex-col lg:flex-row items-center">
