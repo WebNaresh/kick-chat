@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 type Props = {};
@@ -14,8 +15,8 @@ const CarouselComp = (props: Props) => {
       showArrows
       infiniteLoop
     >
-      <div>
-        <img src="/bg-12.jpg" className="h-[50dvh]" />
+      <div className="h-[50dvh]">
+        <Image alt="next" fill src="/bg-12.jpg" className="" />
         <Button
           style={{ width: "fit-content", margin: "auto" }}
           className="legend"
@@ -23,8 +24,8 @@ const CarouselComp = (props: Props) => {
           Legend 1
         </Button>
       </div>
-      <div className="">
-        <img className="h-[50dvh]" src="/Transparent.webp" />
+      <div className="h-[50dvh]">
+        <Image fill alt="next" src="/Transparent.webp" />
         <Button
           style={{ width: "fit-content", margin: "auto" }}
           className="legend"
