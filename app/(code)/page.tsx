@@ -1,11 +1,17 @@
-import Action from "./components/action";
+import type { NextPage } from "next";
+import Image from "next/image";
 
-export default function Home() {
+const HomeComponent: NextPage = () => {
   return (
-    <section>
-      {/* <Carousel />
-      <Separator className="my-4" /> */}
-      <Action />
-    </section>
+    <>
+      <Image
+        alt="Hero Image"
+        src={"/bg-12.jpg"}
+        width={1200}
+        height={500}
+      ></Image>
+    </>
   );
-}
+};
+
+export default HomeComponent;

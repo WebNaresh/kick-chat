@@ -17,24 +17,29 @@ const MainNav = (props: Props) => {
       active: pathname === "/",
     },
     {
-      href: "/resume",
-      label: "Resume",
-      active: pathname === "/resume",
+      href: "/scan",
+      label: "Scan",
+      active: pathname === "/scan",
     },
     {
-      href: "/projects",
-      label: "Projects",
-      active: pathname === "/projects",
-    },
-    {
-      href: "/mygears",
-      label: "My Gears",
-      active: pathname === "/mygears",
+      href: "/chat",
+      label: "Chat",
+      active: pathname === "/chat",
     },
     {
       href: "/login",
       label: "Login",
       active: pathname === "/login",
+    },
+    {
+      href: "/signUp",
+      label: "signUp",
+      active: pathname === "/signUp",
+    },
+    {
+      href: "/shareQr",
+      label: "shareQr",
+      active: pathname === "/shareQr",
     },
   ];
   return (
