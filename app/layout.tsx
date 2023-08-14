@@ -24,10 +24,10 @@ export default function RootLayout({
       className="dark"
       style={{ colorScheme: "dark" }}
     >
-      <body className={cn(inter.className, "")}>
+      <body className={cn(inter.className, "flex flex-col h-[100dvh] ")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <div className="h-full w-full">{children}</div>
+          <div className="h-full w-full ">{children}</div>
         </ThemeProvider>
       </body>
     </html>
