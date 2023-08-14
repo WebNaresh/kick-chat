@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import InputField from "@/components/InputField";
+import InputField from "@/components/AuthComponets/InputField";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
@@ -98,6 +98,7 @@ const AuthForm = () => {
           <Button className="w-full text-white" type="submit">
             {pathname.match("/signUp") ? "Create an account" : "Log in"}
           </Button>
+
           {pathname.match("/signUp") && (
             <Button
               type="button"

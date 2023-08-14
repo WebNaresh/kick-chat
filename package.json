@@ -37,8 +37,5 @@
     "tw-elements": "^1.0.0-beta3",
     "typescript": "5.1.6",
     "zod": "^3.21.4"
-  },
-  "devDependencies": {
-    "prisma": "^5.1.1"
   }
 }

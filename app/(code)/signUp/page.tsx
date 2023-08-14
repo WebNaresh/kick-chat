@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import AuthForm from "../login/components/AuthForm";
+import AuthForm from "@/components/AuthComponets/AuthForm";
 
 const page = () => {
   return (
