@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/wrapper/theme-provider";
+import { ThemeProvider } from "@/components/ui/wrapper/theme-provider";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./(bare)/globals.css";
@@ -23,11 +24,10 @@ export default function RootLayout({
       className="dark"
       style={{ colorScheme: "dark" }}
     >
-      <body className={inter.className}>
+      <body className={cn(inter.className, "")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          {/* {children} */}
-          <div className="pt-16 lg:pt-20">{children}</div>
+          <div className="h-full w-full">{children}</div>
         </ThemeProvider>
       </body>
     </html>
