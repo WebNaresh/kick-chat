@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/wrapper/theme-provider";
+import { ThemeProvider } from "@/components/ui/wrapper/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
