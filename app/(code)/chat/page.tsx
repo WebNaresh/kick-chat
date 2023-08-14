@@ -5,7 +5,7 @@ type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <div className="flex flex-grow h-full">
+    <div className="flex w-full h-full">
       <section className="grid grid-cols-12 flex-grow">
         <div className="col-span-4 border-r-2 border-gray-900">
           <Contacts />

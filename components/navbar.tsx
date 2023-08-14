@@ -6,7 +6,7 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <section className="h-16">
+    <section className="h-[70px]">
       <nav
         className="flex-no-wrap flex z-30 w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-slate-900 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4 fixed"
         data-te-navbar-ref

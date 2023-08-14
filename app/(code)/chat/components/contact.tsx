@@ -23,7 +23,7 @@ const Contacts = (props: Props) => {
           <Separator />
         </div>
       </div>
-      <div className="">
+      <div className=" overflow-y-scroll h-[70vh]">
         {" "}
         {/* Add overflow-y-auto here */}
         <ContactComp />
