@@ -7,7 +7,7 @@ const Page = (props: Props) => {
   return (
     <div className="flex w-full h-full">
       <section className="grid grid-cols-12 flex-grow">
-        <div className="md:col-span-4 lg:col-span-4 col-span-12 border-r-2 border-gray-900">
+        <div className="md:col-span-4 lg:col-span-4 col-span-12 border-r-2 dark:border-gray-900 border-gray-300">
           <Contacts />
         </div>
         <div className="col-span-8 hidden lg:block md:block">

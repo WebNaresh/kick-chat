@@ -12,7 +12,7 @@ const Chat = (props: Props) => {
   return (
     <div className="flex h-full w-full flex-col justify-between relative">
       <div className="h-[70px]">
-        <div className="grid grid-cols-12 bg-gray-9050 border-gray-900 border-2 p-3 items-center absolute top-0">
+        <div className="grid grid-cols-12 w-full bg-gray-9050 dark:border-gray-900 shadow-md p-3 items-center absolute top-0">
           <div className=" col-span-1">
             <Avatar className=" m-auto">
               <AvatarImage
@@ -28,7 +28,7 @@ const Chat = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className=" h-[50vh] lg:h-[84vh] md:max-h-[84vh] max-h-[60vh] overflow-y-scroll py-2">
+      <div className=" h-[50vh] lg:h-[70vh] md:max-h-[84vh] max-h-[60vh] overflow-y-scroll py-2">
         <LeftMessage />
         <RightMessage />
         <LeftMessage />

@@ -1,5 +1,3 @@
-import Link from "next/link";
-import React from "react";
 import AuthForm from "@/components/AuthComponets/AuthForm";
 
 const page = () => {

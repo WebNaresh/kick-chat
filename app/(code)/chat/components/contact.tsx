@@ -15,7 +15,7 @@ const Contacts = (props: Props) => {
             <div className=" col-span-12 my-4 grid place-items-center">
               <Input
                 placeholder="Search"
-                className="rounded-full bg-slate-900 w-[90%]"
+                className="rounded-full dark:bg-slate-900 w-[90%]"
               />
             </div>
           </div>

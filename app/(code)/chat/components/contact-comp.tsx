@@ -7,7 +7,7 @@ type Props = {};
 const ContactComp = (props: Props) => {
   return (
     <>
-      <div className="grid grid-cols-11 py-4 hover:bg-gray-900 cursor-pointer">
+      <div className="grid grid-cols-11 py-4 hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer">
         <div className="grid col-span-2 place-items-center">
           <Avatar className="border-2 border-primary">
             <AvatarImage src="https://github.com/shadcn.png" />
