@@ -3,6 +3,8 @@ import Image from "next/image";
 import React from "react";
 
 const page = () => {
+  console.log("page");
+
   return (
     <>
       <div className="flex w-full justify-center items-center h-screen">
