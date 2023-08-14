@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={cn(inter.className, "flex flex-col h-screen")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <div className="mt-2 pt-2 h-full">{children}</div>
+          <div className="h-screen">{children}</div>
         </ThemeProvider>
       </body>
     </html>
