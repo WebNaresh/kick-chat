@@ -4,6 +4,7 @@ import React from "react";
 
 const page = () => {
   console.log("page");
+  console.log("page");
 
   return (
     <>
