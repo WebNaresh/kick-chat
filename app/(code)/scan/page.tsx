@@ -24,7 +24,7 @@ const Page = (props: Props) => {
           height={0}
           width={0}
           sizes="100vw"
-          className="w-[60%] h-full hidden lg:block object-contain border-l-2 border-gray-800"
+          className="w-[60%] h-full hidden lg:block object-contain border-l-2 dark:border-gray-800 border-gray-200"
         />
       </div>
     </>
