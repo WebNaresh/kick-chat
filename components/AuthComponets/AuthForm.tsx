@@ -1,24 +1,14 @@
 "use client";
 
-import React from "react";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import * as z from "zod";
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
 import InputField from "@/components/AuthComponets/InputField";
-import { usePathname, useRouter } from "next/navigation";
-import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
+import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
+import * as z from "zod";
 
 const formSchema = z.object({
   name: z.string().min(5, {
@@ -68,7 +58,7 @@ const AuthForm = () => {
         </h1>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mt-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 ">
           {pathname.match("/signUp") && (
             <InputField
               form={form}
