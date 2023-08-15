@@ -10,12 +10,12 @@ const CarouselComp = (props: Props) => {
     <Carousel
       showStatus={false}
       showThumbs={false}
-      className="h-[50dvh]"
+      className="h-[20dvh] lg:block md:block  sm:block lg:h-[30dvh] md:h-[30dvh] shadow-xl m-8 rounded-xl overflow-hidden"
       autoPlay
       showArrows
       infiniteLoop
     >
-      <div className="h-[50dvh]">
+      <div className="h-[20dvh] lg:block md:block  sm:block lg:h-[30dvh] md:h-[30dvh]">
         <Image alt="next" fill src="/bg-12.jpg" className="" />
         <Button
           style={{ width: "fit-content", margin: "auto" }}
@@ -24,8 +24,8 @@ const CarouselComp = (props: Props) => {
           Legend 1
         </Button>
       </div>
-      <div className="h-[50dvh]">
-        <Image fill alt="next" src="/Transparent.webp" />
+      <div className="h-[20dvh] lg:block md:block  sm:block lg:h-[30dvh] md:h-[30dvh] ">
+        <Image fill alt="next" src="/Transparent.webp" className="" />
         <Button
           style={{ width: "fit-content", margin: "auto" }}
           className="legend"

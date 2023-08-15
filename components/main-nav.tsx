@@ -42,6 +42,14 @@ const MainNav = (props: Props) => {
       active: pathname === "/shareQr",
     },
   ];
+  const showHideNavbar = (event: any) => {
+    const navabar = document.getElementById("navbarSupportedContent1");
+    if (navabar?.classList.contains("hidden")) {
+      navabar?.classList.remove("hidden");
+    } else {
+      navabar?.classList.add("hidden");
+    }
+  };
   return (
     <div className="flex flex-col lg:flex-row items-center">
       {rountes.map((ele, i) =>
@@ -66,6 +74,7 @@ const MainNav = (props: Props) => {
         ) : (
           <li key={i} className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
             <Link
+              onClick={showHideNavbar}
               className={`${
                 ele.active === true
                   ? "dark:text-primary text-primary"

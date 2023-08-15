@@ -7,14 +7,14 @@ type Props = {};
 const Navbar = (props: Props) => {
   return (
     <nav
-      className="h-[70px] flex-no-wrap flex z-30 w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-slate-900 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4 "
+      className="lg:h-[70px] flex-no-wrap flex z-30 w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-black/5 dark:bg-slate-900 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4 shadow-lg"
       data-te-navbar-ref
     >
       <div className="flex w-full justify-between px-3">
         <NavButton />
 
         <div
-          className="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto transform transition-opacity duration-300 ease-in-out"
+          className="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto transform  transition-all duration-300 ease-in-out"
           id="navbarSupportedContent1"
           data-te-collapse-item
         >

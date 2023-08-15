@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { BsDownload } from "react-icons/bs";
+import { PiScan } from "react-icons/pi";
 
-const page = () => {
+type Props = {};
+
+const Page = (props: Props) => {
   return (
     <>
       <div className="flex w-full justify-center items-center h-[90vh]">
         <div className="w-[40%] flex  justify-center ">
           <Button
             size={"lg"}
-            className="rounded-full bg-green-400 text-md gap-3"
+            className="rounded-full bg-green-400 text-md gap-4"
           >
-            <BsDownload />
-            Download
+            <PiScan />
+            Scan
           </Button>
         </div>
 
@@ -29,4 +31,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

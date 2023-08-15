@@ -12,7 +12,7 @@ const Chat = (props: Props) => {
   return (
     <div className="flex h-full w-full flex-col justify-between relative">
       <div className="h-[70px]">
-        <div className="grid grid-cols-12 w-full bg-gray-9050 dark:border-gray-900 shadow-md p-3 items-center absolute top-0">
+        <div className="grid grid-cols-12 w-full bg-gray-9050 dark:border-gray-900 border-b-2 shadow-md p-3 items-center absolute top-0">
           <div className=" col-span-1">
             <Avatar className=" m-auto">
               <AvatarImage
@@ -56,19 +56,19 @@ const Chat = (props: Props) => {
         <LeftMessage />
         <RightMessage />
       </div>
-      <div className="grid grid-cols-12 bg-primary p-2">
+      <div className="grid grid-cols-12 bg-gray-200 dark:bg-gray-900 p-2">
         <div className="col-span-1 grid place-items-center">
-          <BsEmojiSmile className="text-gray-950 text-xl" />
+          <BsEmojiSmile className="text-primary text-xl" />
         </div>
         <div className="col-span-10">
           <Input
             placeholder="Reply..."
             color=""
-            className=" outline-none border-none text-gray-950 placeholder:text-black focus-visible:ring-0"
+            className=" outline-none border-none text-gray-950 dark:text-white dark:placeholder:text-white placeholder:text-black focus-visible:ring-0 shadow-none"
           ></Input>
         </div>
         <div className="col-span-1 grid place-items-center">
-          <PiCaretCircleRightFill className="text-gray-950 text-3xl" />
+          <PiCaretCircleRightFill className="text-primary text-3xl" />
         </div>
       </div>
     </div>
