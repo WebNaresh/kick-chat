@@ -3,12 +3,9 @@ import Image from "next/image";
 import React from "react";
 
 const page = () => {
-  console.log("page");
-  console.log("page");
-
   return (
     <>
-      <div className="flex w-full justify-center items-center h-screen">
+      <div className="flex w-full justify-center items-center h-[90vh]">
         <div className="w-[40%] flex  justify-center">
           <Button className="rounded-full bg-green-400 px-14 py-6 text-md ">
             Scan
@@ -21,7 +18,7 @@ const page = () => {
           height={0}
           width={0}
           sizes="100vw"
-          className="w-[60%] h-full hidden md:block"
+          className="w-[60%] h-full hidden lg:block"
         />
       </div>
     </>

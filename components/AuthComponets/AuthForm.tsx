@@ -117,11 +117,11 @@ const AuthForm = () => {
           : "Don`t have an account?"}
 
         {pathname.match("/signUp") ? (
-          <Link href={"#"} className="text-primary pl-1">
+          <Link href={"/login"} className="text-primary pl-1">
             Log in
           </Link>
         ) : (
-          <Link href={"#"} className="text-primary pl-1">
+          <Link href={"/signUp"} className="text-primary pl-1">
             {" "}
             Sign up
           </Link>
