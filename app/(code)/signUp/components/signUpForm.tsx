@@ -29,8 +29,10 @@ const formSchema = z.object({
 
 const SignUpForm = () => {
   const router = useRouter();
-  const data = useSession();
-  console.log(`🚀 ~ data:`, data);
+  const { data } = useSession();
+  if (data?.user) {
+    router.push("/");
+  }
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

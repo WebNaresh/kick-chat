@@ -2,6 +2,7 @@ export interface RoutesA {
   href: string;
   label: string;
   active: boolean;
+  hide?: boolean;
 }
 export interface User {
   id: string;

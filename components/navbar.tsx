@@ -4,7 +4,7 @@ import { ThemeToggle } from "./toggle-button";
 
 type Props = {};
 
-const Navbar = (props: Props) => {
+const Navbar = async (props: Props) => {
   return (
     <nav
       className="lg:h-[70px] flex-no-wrap flex z-30 w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-black/5 dark:bg-slate-900 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4 shadow-lg"

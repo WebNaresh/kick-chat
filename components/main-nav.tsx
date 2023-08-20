@@ -10,7 +10,7 @@ type Props = {};
 
 const MainNav = (props: Props) => {
   const data = useSession();
-  console.log(`🚀 ~ data:`, data);
+  console.log(`🚀 ~ data:`, data.data?.user);
   const pathname = usePathname();
 
   const rountes: RoutesA[] = [
@@ -32,11 +32,13 @@ const MainNav = (props: Props) => {
     {
       href: "/login",
       label: "Login",
+      hide: data?.data?.user ? true : false,
       active: pathname === "/login",
     },
     {
       href: "/signUp",
       label: "signUp",
+      hide: data?.data?.user ? true : false,
       active: pathname === "/signUp",
     },
     {
@@ -63,7 +65,11 @@ const MainNav = (props: Props) => {
               href={ele.href}
             >
               <Image
-                src="https://instagram.fnag1-4.fna.fbcdn.net/v/t51.2885-19/278989595_664165064810773_3556417570745100004_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fnag1-4.fna.fbcdn.net&_nc_cat=101&_nc_ohc=6cKhMqFLgWYAX9GJ10S&edm=ACWDqb8BAAAA&ccb=7-5&oh=00_AfBVtxk5NWc7Ag84tiuXvFjVtoepnQMrXwmDUQRwVC2wmQ&oe=64D95257&_nc_sid=ee9879"
+                src={` ${
+                  data.data?.user?.image
+                    ? data.data.user?.image
+                    : "https://instagram.fnag1-4.fna.fbcdn.net/v/t51.2885-19/278989595_664165064810773_3556417570745100004_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fnag1-4.fna.fbcdn.net&_nc_cat=101&_nc_ohc=6cKhMqFLgWYAX9GJ10S&edm=ACWDqb8BAAAA&ccb=7-5&oh=00_AfBVtxk5NWc7Ag84tiuXvFjVtoepnQMrXwmDUQRwVC2wmQ&oe=64D95257&_nc_sid=ee9879"
+                }`}
                 height={40}
                 width={40}
                 className={`hover:border-primary ${
@@ -75,7 +81,11 @@ const MainNav = (props: Props) => {
             </Link>
           </li>
         ) : (
-          <li key={i} className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+          <li
+            key={i}
+            className={`mb-4 lg:mb-0 lg:pr-2 ${ele.hide ? "hidden" : ""}`}
+            data-te-nav-item-ref
+          >
             <Link
               onClick={showHideNavbar}
               className={`${
