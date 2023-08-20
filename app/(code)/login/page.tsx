@@ -1,4 +1,4 @@
-import AuthForm from "../../../components/AuthComponets/AuthForm";
+import LoginForm from "./components/form";
 
 const page = () => {
   return (
@@ -8,7 +8,8 @@ const page = () => {
           id="container"
           className="py-4 px-10 sm:mx-auto sm:w-full sm:max-w-md  bg-[#FBFBFB] rounded-lg  shadow-md shadow-black/5 dark:bg-slate-900 dark:shadow-black/10 "
         >
-          <AuthForm />
+          {/* <AuthForm /> */}
+          <LoginForm />
         </div>
       </section>
     </>

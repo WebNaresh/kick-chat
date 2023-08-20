@@ -1,8 +1,10 @@
 import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/ui/wrapper/theme-provider";
+import { NextAuthProvider } from "@/components/wrapper/next-auth-provider";
+import { ThemeProvider } from "@/components/wrapper/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./(bare)/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,10 +27,14 @@ export default function RootLayout({
       style={{ colorScheme: "dark" }}
     >
       <body className={cn(inter.className, "flex flex-col h-[100dvh] ")}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          <div className="h-full w-full ">{children}</div>
-        </ThemeProvider>
+        <NextAuthProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            <Toaster />
+
+            <div className="h-full w-full ">{children}</div>
+          </ThemeProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

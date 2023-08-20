@@ -4,10 +4,12 @@ import InputField from "@/components/AuthComponets/InputField";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-hot-toast";
 import * as z from "zod";
 
 const formSchema = z.object({
@@ -25,8 +27,10 @@ const formSchema = z.object({
   }),
 });
 
-const AuthForm = () => {
-  const pathname = usePathname();
+const SignUpForm = () => {
+  const router = useRouter();
+  const data = useSession();
+  console.log(`🚀 ~ data:`, data);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -37,37 +41,40 @@ const AuthForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    const res = await fetch("/api/register", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (res.status === 500) {
+      toast.error(res.statusText);
+    }
+    if (res.status === 200) {
+      toast.success("Registering succesfully login with your credentianls");
+      router.push("/login");
+    }
   }
 
   return (
     <>
       <div className="pt-6">
-        {pathname.match("/signUp") && (
-          <p className="text-sm text-gray-300  ">Welecome back</p>
-        )}
-        <h1
-          className={`text-2xl pt-2 font-semibold ${
-            pathname.match("/login") && "text-center"
-          }`}
-        >
-          {pathname.match("/signUp")
-            ? "Create an account"
-            : "Login to your account"}
+        <h1 className={`text-2xl pt-2 font-semibold text-center`}>
+          Register to your account
         </h1>
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 ">
-          {pathname.match("/signUp") && (
-            <InputField
-              form={form}
-              name="name"
-              label="Name"
-              placeholder="Enter your name"
-              desc=" This is your public display name."
-            />
-          )}
+          <InputField
+            form={form}
+            name="name"
+            label="Name"
+            placeholder="Enter your name"
+            desc=" This is your public display name."
+          />
           <InputField
             form={form}
             name="email"
@@ -86,39 +93,28 @@ const AuthForm = () => {
           />
 
           <Button className="w-full text-white" type="submit">
-            {pathname.match("/signUp") ? "Create an account" : "Log in"}
+            Register
           </Button>
 
-          {pathname.match("/signUp") && (
-            <Button
-              type="button"
-              className="w-full bg-white text-primary dark:hover:bg-slate-100"
-            >
-              <FcGoogle className="mr-2 h-4 w-4" />
-              Continue with Google
-            </Button>
-          )}
+          <Button
+            type="button"
+            className="w-full bg-white dark:hover:bg-slate-100"
+            onClick={() => signIn("github")}
+          >
+            <GitHubLogoIcon className="mr-2 h-4 w-4" />
+            Continue with Github
+          </Button>
         </form>
       </Form>
 
       <p className="text-xs text-gray-400 text-center mt-4 pb-10">
-        {pathname.match("/signUp")
-          ? "Already have an accunt?"
-          : "Don`t have an account?"}
-
-        {pathname.match("/signUp") ? (
-          <Link href={"/login"} className="text-primary pl-1">
-            Log in
-          </Link>
-        ) : (
-          <Link href={"/signUp"} className="text-primary pl-1">
-            {" "}
-            Sign up
-          </Link>
-        )}
+        Already have an accunt?
+        <Link href={"/login"} className="text-primary pl-1">
+          Log in
+        </Link>
       </p>
     </>
   );
 };
 
-export default AuthForm;
+export default SignUpForm;

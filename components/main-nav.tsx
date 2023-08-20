@@ -1,6 +1,7 @@
 "use client";
 
 import { RoutesA } from "@/lib/interface";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,6 +9,8 @@ import { usePathname } from "next/navigation";
 type Props = {};
 
 const MainNav = (props: Props) => {
+  const data = useSession();
+  console.log(`🚀 ~ data:`, data);
   const pathname = usePathname();
 
   const rountes: RoutesA[] = [
