@@ -1,5 +1,11 @@
+"use client";
+import dynamic from "next/dynamic";
 import Chat from "./components/chat";
 import Contacts from "./components/contact";
+
+const Scan = dynamic(() => import("./components/scan"), {
+  ssr: false, // Disable server-side rendering for this component
+});
 
 type Props = {};
 
@@ -11,7 +17,7 @@ const Page = (props: Props) => {
           <Contacts />
         </div>
         <div className="col-span-8 hidden lg:block md:block">
-          <Chat />
+          {0 ? <Chat /> : <Scan />}
         </div>
       </section>
     </div>

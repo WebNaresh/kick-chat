@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { PiScan } from "react-icons/pi";
+import Scan from "../chat/components/scan";
 
 type Props = {};
 
@@ -26,6 +27,7 @@ const Page = (props: Props) => {
           sizes="100vw"
           className="w-[60%] h-full hidden lg:block object-contain border-l-2 dark:border-gray-800 border-gray-200"
         />
+        <Scan />
       </div>
     </>
   );
