@@ -79,7 +79,7 @@ const LoginForm = () => {
           />
 
           <Button className="w-full text-white" type="submit">
-            Register
+            Login
           </Button>
 
           <Button

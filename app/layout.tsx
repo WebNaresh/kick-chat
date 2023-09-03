@@ -1,3 +1,4 @@
+import Floating from "@/components/floating-button";
 import Navbar from "@/components/navbar";
 import { NextAuthProvider } from "@/components/wrapper/next-auth-provider";
 import { ThemeProvider } from "@/components/wrapper/theme-provider";
@@ -32,7 +33,10 @@ export default function RootLayout({
             <Navbar />
             <Toaster />
 
-            <div className="h-full w-full ">{children}</div>
+            <div className="h-full w-full ">
+              {children}
+              <Floating />
+            </div>
           </ThemeProvider>
         </NextAuthProvider>
       </body>

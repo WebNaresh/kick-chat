@@ -16,7 +16,12 @@ const CarouselComp = (props: Props) => {
       infiniteLoop
     >
       <div className="h-[20dvh] lg:block md:block  sm:block lg:h-[30dvh] md:h-[30dvh]">
-        <Image alt="next" fill src="/bg-12.jpg" className="" />
+        <Image
+          alt="next"
+          fill
+          src="/bg-12.jpg"
+          className=" object-contain rounded-xl"
+        />
         <Button
           style={{ width: "fit-content", margin: "auto" }}
           className="legend"
@@ -25,7 +30,12 @@ const CarouselComp = (props: Props) => {
         </Button>
       </div>
       <div className="h-[20dvh] lg:block md:block  sm:block lg:h-[30dvh] md:h-[30dvh] ">
-        <Image fill alt="next" src="/Transparent.webp" className="" />
+        <Image
+          fill
+          alt="next"
+          src="/Transparent.webp"
+          className=" object-contain rounded-xl"
+        />
         <Button
           style={{ width: "fit-content", margin: "auto" }}
           className="legend"

@@ -7,6 +7,7 @@ const nextConfig = {
       "flowbite.com",
       "avatars.githubusercontent.com",
       "images.unsplash.com",
+      "naresh-resume.vercel.app",
     ],
   },
 };
