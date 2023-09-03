@@ -4,12 +4,21 @@ import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
+import { useSocket } from "@/hooks/useSocket";
 import { signOut, useSession } from "next-auth/react";
+import { useEffect } from "react";
 import { HiOutlineLogout } from "react-icons/hi";
 
 export function ThemeToggle() {
   const data = useSession();
-  console.log(`🚀 ~ data:`, data);
+  const { socketId, setSocketId } = useSocket();
+
+  useEffect(() => {
+    if (data.data?.user?.id) {
+      setSocketId(data?.data?.user?.id as string);
+    }
+  }, [data]);
+
   const { setTheme, theme } = useTheme();
   const toggleMode = () => {
     if (theme === "dark") {

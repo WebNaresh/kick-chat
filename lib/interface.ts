@@ -1,3 +1,4 @@
+import NextAuth from "next-auth";
 export interface RoutesA {
   href: string;
   label: string;
@@ -11,4 +12,15 @@ export interface User {
   emailVerified: Date | null;
   image: string | null;
   password: string;
+}
+
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string;
+      name: string;
+      email: string;
+      image: string;
+    };
+  }
 }

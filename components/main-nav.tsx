@@ -10,7 +10,7 @@ type Props = {};
 
 const MainNav = (props: Props) => {
   const data = useSession();
-  console.log(`🚀 ~ data:`, data.data?.user);
+  // console.log(`🚀 ~ data:`, data.data?.user);
   const pathname = usePathname();
 
   const rountes: RoutesA[] = [

@@ -66,6 +66,7 @@ const Chat = (props: Props) => {
             color=""
             className=" outline-none border-none text-gray-950 dark:text-white dark:placeholder:text-white placeholder:text-black focus-visible:ring-0 shadow-none"
           ></Input>
+          hello
         </div>
         <div className="col-span-1 grid place-items-center">
           <PiCaretCircleRightFill className="text-primary text-3xl" />
